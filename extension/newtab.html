@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mantle</title>
+    <link rel="stylesheet" href="newtab.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="top">
+        <div class="brand">
+          <h1>Mantle</h1>
+          <span class="tagline">Deployments</span>
+        </div>
+        <div class="controls">
+          <span id="status" class="status" hidden></span>
+          <button id="refresh" class="icon-btn" title="Refresh now" aria-label="Refresh">↻</button>
+          <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">⚙</button>
+        </div>
+      </header>
+
+      <section id="setup" class="setup" hidden>
+        <h2>Connect to Vercel</h2>
+        <p class="hint">
+          Create a token at
+          <a href="https://vercel.com/account/tokens" target="_blank" rel="noreferrer"
+            >vercel.com/account/tokens</a
+          >. It's stored locally in this browser only.
+        </p>
+        <label>
+          <span>Vercel access token</span>
+          <input id="token" type="password" placeholder="xxxxxxxxxxxxxxxx" autocomplete="off" />
+        </label>
+        <label>
+          <span>Project name or ID</span>
+          <input id="project" type="text" placeholder="mantle" autocomplete="off" />
+        </label>
+        <label>
+          <span>Team ID <em>(optional, for team projects)</em></span>
+          <input id="teamId" type="text" placeholder="team_xxxxxxxx" autocomplete="off" />
+        </label>
+        <div class="setup-actions">
+          <button id="save" class="primary">Save &amp; connect</button>
+          <span id="setupMsg" class="setup-msg"></span>
+        </div>
+      </section>
+
+      <section id="feed" class="feed" hidden>
+        <ul id="list" class="list"></ul>
+      </section>
+
+      <section id="empty" class="empty" hidden>
+        <p>No deployments found for this project yet.</p>
+      </section>
+    </main>
+
+    <script src="newtab.js"></script>
+  </body>
+</html>
